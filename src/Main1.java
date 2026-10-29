@@ -48,9 +48,43 @@ public class Main1 {
 
     // VALID PARENTHESIS
 
-    public boolean isValid(String s){
-
-    }
+//    public boolean isValid(String s){
+//        Deque<Character> st = new ArrayDeque<>();
+//
+//        for(char ch: s.toCharArray()){
+//            if(ch =='(' || ch =='[' || ch =='{'){
+//                st.push(ch);
+//            }
+//            else{
+//                // closing bracket
+//                if(st.isEmpty()){
+//                    return false;
+//                }
+//                if(ch ==')' && st.peek() != '('){
+//                    return false;
+//                }
+//
+//                else if(ch ==']' && st.peek() != '['){
+//                    return false;
+//                }
+//
+//                else if(ch =='}' && st.peek() != '{'){
+//                    return false;
+//                }
+//                else{
+//                    st.pop();
+//
+//            }
+//        }
+//            if(st.isEmpty()){
+//                return true;
+//
+//            }
+//            else{
+//                return false;
+//            }
+//
+//    }
 
     public static void main(String[] args){
 //       Stack<Integer>  st = new Stack<>();
