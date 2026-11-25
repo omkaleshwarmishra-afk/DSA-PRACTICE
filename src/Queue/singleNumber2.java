@@ -1,25 +1,43 @@
-package Queue;
+ class Main2 {
 
-class Solution {
-    public int singleNumber2(int[] nums) {
+    public static int divide(int dividend, int divisor) {
 
-        int ans = 0;
-
-        for (int i = 0; i < 32; i++) {
-
-            int count = 0;
-
-            for (int num : nums) {
-                if ((num & (1 << i)) != 0) {
-                    count++;
-                }
-            }
-
-            if (count % 3 != 0) {
-                ans = ans | (1 << i);
-            }
+        if (dividend == Integer.MIN_VALUE && divisor == -1) {
+            return Integer.MAX_VALUE;
         }
 
-        return ans;
+        long a = Math.abs((long) dividend);
+        long b = Math.abs((long) divisor);
+
+        long ans = 0;
+
+        while (a >= b) {
+            long temp = b;
+            long multiple = 1;
+
+            while (a >= (temp << 1)) {
+                temp = temp << 1;
+                multiple = multiple << 1;
+            }
+
+            a = a - temp;
+            ans = ans + multiple;
+        }
+
+        if ((dividend < 0) ^ (divisor < 0)) {
+            ans = -ans;
+        }
+
+        return (int) ans;
+    }
+
+    public static void main(String[] args) {
+
+        int dividend = 10;
+        int divisor = 3;
+
+        int result = divide(dividend, divisor);
+
+        System.out.println("Quotient: " + result);
     }
 }
